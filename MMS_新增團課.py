@@ -6,7 +6,7 @@ import time
 
 URL = uc.Chrome()
 wait = ui.WebDriverWait(URL,10)
-
+URL.maximize_window()
 URL.get("https://oneclub.backstage-dev.oneclass.com.tw/")
 
 def add_student_all():
@@ -56,18 +56,19 @@ course_type.click()#選擇課程類型
 course_type.send_keys(Keys.DOWN)
 course_type.send_keys(Keys.ENTER)#選擇團課
 
+URL.execute_script("window.scrollBy(0,500)")
+
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]/div/div/input"))
 input_oneClub = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]/div/div/input")
 input_oneClub.send_keys("green002")#輸入第一個學生的OneClub
 
-time.sleep(3)
+time.sleep(5)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[2]/div/div/div/input"))
 input_student = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[2]/div/div/div/input")
 input_student.click()#選擇第一個學生姓名
 input_student.send_keys(Keys.DOWN)
 input_student.send_keys(Keys.ENTER)#學生姓名:林謙那
 
-URL.execute_script("window.scrollBy(0,500)")
 
 add_student_all()#呼叫新增學員
 
@@ -75,7 +76,7 @@ wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main
 input_oneclub_2 = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[2]/td[1]/div/div/input")
 input_oneclub_2.send_keys("green003")#輸入第二個學生的OneClub
 
-time.sleep(3)
+time.sleep(5)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[2]/td[2]/div/div/div/input"))
 input_student_2 = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[2]/td[2]/div/div/div/input")
 input_student_2.click()#選擇第二個學生
@@ -88,7 +89,7 @@ wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main
 input_oneclub_3 = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[1]/div/div/input")
 input_oneclub_3.send_keys("green004")#輸入第三個學生的OneClub
 
-time.sleep(3)
+time.sleep(5)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/div/div/div/input"))
 input_student_3 = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr[3]/td[2]/div/div/div/input")
 input_student_3.click()#選擇第三個學生
@@ -98,17 +99,18 @@ input_student_3.send_keys(Keys.ENTER)#學生姓名:
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[3]/div[2]/div/div/div/input"))
 course_type = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[3]/div[2]/div/div/div/input")
 course_type.click()#選擇課程類別
+course_type.send_keys("國小正式25分鐘")
 course_type.send_keys(Keys.DOWN)
 course_type.send_keys(Keys.ENTER)
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/input"))
 input_course_date = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/input")
-input_course_date.send_keys("2023/09/23")#輸入日期
+input_course_date.send_keys("2023/10/02")#輸入日期
 
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/input"))
 start_time = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/input")
-start_time.send_keys(Keys.CONTROL, 'v ')#輸入課程開始時間 (先複製時間:ex.10:00)
+start_time.send_keys(Keys.CONTROL, 'v ')#輸入課程開始時間 (先複製時間:ex.18:00)
 
 URL.execute_script("window.scrollBy(0,600)")
 
@@ -122,8 +124,8 @@ time.sleep(2)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/div[3]/div[2]/div[2]/div/div/input"))
 choose_teacher = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/div[3]/div[2]/div[2]/div/div/input")
 ActionChains(URL).move_to_element(choose_teacher).click().perform()#選擇老師
-for i in range(2):
-    choose_teacher.send_keys(Keys.DOWN)
+choose_teacher.send_keys("黃分氣")
+choose_teacher.send_keys(Keys.DOWN)
 choose_teacher.send_keys(Keys.ENTER)
 
 time.sleep(2)
