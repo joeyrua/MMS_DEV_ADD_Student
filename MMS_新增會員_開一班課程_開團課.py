@@ -89,6 +89,86 @@ check_same_reach_out_address = URL.find_element("xpath","/html/body/div/div[2]/m
 check_same_reach_out_address.click()#勾選同聯絡地址
 
 
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[6]/button[2]"))
+save = URL.find_element("xpath","/html/body/div/div[2]/main/div[6]/button[2]")
+save.click()#儲存
+
+#----建立學生----
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr[1]/td[9]/button"))
+edit = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr[1]/td[9]/button")
+edit.click()#編輯
+
+URL.switch_to.window(URL.window_handles[1])#切換到另一個分頁
+time.sleep(5)
+URL.execute_script("window.scrollBy(0,1000)")
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[1]/div/button"))
+add_student = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[1]/div/button")
+add_student.click()#新增學員
+
+time.sleep(2)
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div/div/input"))
+input_studnet_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div/div/input")
+input_studnet_name.send_keys("王學一")#輸入姓名
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div/div/div/input"))
+input_educational_stage = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div/div/div/input")
+input_educational_stage.send_keys("國小")#輸入學制
+input_educational_stage.send_keys(Keys.DOWN)
+input_educational_stage.send_keys(Keys.DOWN)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/div[2]/div/div/div/input"))
+input_grade = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/div[2]/div/div/div/input")
+input_grade.send_keys("一年級")#輸入年級
+input_grade.send_keys(Keys.DOWN)
+input_grade.send_keys(Keys.ENTER)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[1]/div/div/input"))
+input_school_country = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[1]/div/div/input")
+input_school_country.send_keys("新北市")#輸入學校縣市
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[2]/div/div/input"))
+input_school_district = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[2]/div/div/input")
+input_school_district.send_keys("板橋區")#輸入學校區域
+input_school_district.send_keys(Keys.DOWN)
+input_school_district.send_keys(Keys.ENTER)
+
+URL.execute_script("window.scrollBy(0,500)")
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[3]/div/div/input"))
+input_school_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/div[2]/div[3]/div/div/input")
+input_school_name.send_keys("大觀國小")#輸入學校名稱
+input_school_name.send_keys(Keys.DOWN)
+input_school_name.send_keys(Keys.ENTER)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[1]/div/div/input"))
+Shipping_address_Country = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[1]/div/div/input")
+Shipping_address_Country.send_keys("新北市")#輸入寄送地址(縣市)
+Shipping_address_Country.send_keys(Keys.DOWN)
+Shipping_address_Country.send_keys(Keys.ENTER)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[2]/div/div/input"))
+Shipping_address_district = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[2]/div/div/input")
+Shipping_address_district.send_keys("板橋區")#輸入寄送地址(區域)
+Shipping_address_district.send_keys(Keys.DOWN)
+Shipping_address_district.send_keys(Keys.ENTER)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[3]/div/input"))
+Shipping_address_address = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div[2]/div[3]/div/input")
+Shipping_address_address.send_keys("中正路100號")#輸入寄送地址(地址)
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[5]/button[2]"))
+add_button = URL.find_element("xpath","/html/body/div/div[2]/main/div[5]/button[2]")
+add_button.click()#新增
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/button"))
+back_button = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[4]/button")
+back_button.click()#返回
+
+#----切換到一般課程---
+
+
+
 
 
 
