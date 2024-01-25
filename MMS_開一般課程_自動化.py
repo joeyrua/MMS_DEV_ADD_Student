@@ -22,57 +22,74 @@ password.send_keys("juan7890")#密碼
 
 password.send_keys(Keys.ENTER)#打完帳密按下Enter
 
-time.sleep(5)
+time.sleep(1)
 
 wait.until(lambda driver:driver.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='general v1.0.0'])[1]/following::div[1]"))
 member_manage = URL.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='general v1.0.0'])[1]/following::div[1]")
 member_manage.click()
 
-time.sleep(2)
+time.sleep(1)
 wait.until(lambda driver:driver.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='會員管理'])[1]/following::div[1]"))
 Curroclum_Management = URL.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='會員管理'])[1]/following::div[1]")
 Curroclum_Management.click()
 
 #----新增正式課----
-time.sleep(2)
+time.sleep(1)
 wait.until(lambda driver:driver.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='試聽課程管理'])[1]/following::div[2]"))
 general_course = URL.find_element("xpath","(.//*[normalize-space(text()) and normalize-space(.)='試聽課程管理'])[1]/following::div[2]")
 general_course.click()#正式課
 
-wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[2]/main/div[2]/div[1]/div/div[4]/button"))
-add_general_course = URL.find_element("xpath","/html/body/div[1]/div[2]/main/div[2]/div[1]/div/div[4]/button")
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[1]/div/div[3]/button"))
+add_general_course = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[1]/div/div[3]/button")
 add_general_course.click()#新增課程
 
 URL.switch_to.window(URL.window_handles[1])#切換到另一個分頁
 
-time.sleep(5)
+time.sleep(2)
 URL.execute_script("window.scrollBy(0,500)")
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]/div/div/input"))
 input_oneclub_id = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[1]/div/div/input")
-input_oneclub_id.send_keys("red111")#輸入學生Oneclub_id
+input_oneclub_id.send_keys("green004")#輸入學生Oneclub_id
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[2]/div/div/div/input"))
 choose_student_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div[2]/table/tbody/tr/td[2]/div/div/div/input")
 choose_student_name.click()#選擇學生
-time.sleep(2)
+time.sleep(3)
 choose_student_name.send_keys(Keys.DOWN)
 choose_student_name.send_keys(Keys.ENTER)
 
+time.sleep(2)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[3]/div[2]/div/div/div/input"))
 course_type = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[3]/div[2]/div/div/div/input")
 course_type.click()#選擇課程類別
+course_type.send_keys("國小")
 course_type.send_keys(Keys.DOWN)
 course_type.send_keys(Keys.ENTER)
 
-wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/input"))
-input_course_date = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/input")
-input_course_date.send_keys("2023/09/15")#輸入日期
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/div/button"))
+course_date = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/div/button")
+course_date.click()
+
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[4]/div[5]/button"))
+jan_tw_five = URL.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[4]/div[5]/button")
+jan_tw_five.click()
 
 
-wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/input"))
-start_time = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/input")
-start_time.send_keys(Keys.CONTROL, 'v ')#輸入課程開始時間
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[1]/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/div/button"))
+clock_btn = URL.find_element("xpath","/html/body/div[1]/div[2]/main/div[2]/div[3]/div[3]/div[2]/div/div/button")
+clock_btn.click()
+
+time.sleep(2)
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[3]/span[12]"))
+eleven = URL.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[3]/span[12]")
+action.move_to_element(eleven).click().perform()
+
+time.sleep(1)
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[4]/span[6]"))
+half = URL.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[4]/span[6]")
+action.move_to_element(half).click().perform()
+
 
 URL.execute_script("window.scrollBy(0,600)")
 
