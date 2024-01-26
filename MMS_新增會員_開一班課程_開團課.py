@@ -42,11 +42,11 @@ data_source()
 #----會員資訊-----
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[3]/div[2]/div/div/div/input"))
 input_OneClub_ID = URL.find_element("xpath","/html/body/div/div[2]/main/div[3]/div[2]/div/div/div/input")
-input_OneClub_ID.send_keys("green007")#輸入OneClub ID
+input_OneClub_ID.send_keys("green016")#輸入OneClub ID
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[3]/div[3]/div/div/div/input"))
 input_neme = URL.find_element("xpath","/html/body/div/div[2]/main/div[3]/div[3]/div/div/div/input")
-input_neme.send_keys("王測七")#輸入姓名
+input_neme.send_keys("測十六")#輸入姓名
 
 URL.execute_script("window.scrollBy(0,500)")
 
@@ -109,7 +109,7 @@ add_student.click()#新增學員
 time.sleep(2)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div/div/input"))
 input_studnet_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[2]/div[2]/div/div/input")
-input_studnet_name.send_keys("王學一")#輸入姓名
+input_studnet_name.send_keys("學十六")#輸入姓名
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div/div/div/input"))
 input_educational_stage = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div/div/div/input")
