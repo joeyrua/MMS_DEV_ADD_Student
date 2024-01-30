@@ -71,8 +71,8 @@ wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div/div[2]/main
 course_date = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div[2]/div[2]/div/div/button")
 course_date.click()
 
-wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[4]/div[5]/button"))
-jan_tw_five = URL.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[4]/div[5]/button")
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[5]/div[4]/button"))
+jan_tw_five = URL.find_element("xpath","/html/body/div[2]/div[2]/div/div/div/div[2]/div/div[2]/div/div[5]/div[4]/button")
 jan_tw_five.click()
 
 
@@ -130,8 +130,31 @@ wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main
 post = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[6]/div/div[2]/button[3]")
 post.click()#按下發布
 
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div/div[2]/div[2]/div/div/input"))
+choose_input_student_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div/div[2]/div[2]/div/div/input")
+choose_input_student_name.send_keys("林新月")
+choose_input_student_name.send_keys(Keys.ENTER)
 
+URL.execute_script("window.scrollBy(0,300)")
 
+time.sleep(2)
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr/td[9]/div/div/button"))
+edit = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr/td[9]/div/div/button")
+edit.click()
+
+URL.switch_to.window(URL.window_handles[2])#切換到另一個分頁
+
+wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[9]/div/div[1]"))
+channel_course = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[9]/div/div[1]")
+channel_course.click()
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[1]/div[4]/div/textarea[1]"))
+input_change_reason = URL.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[1]/div[4]/div/textarea[1]")
+input_change_reason.send_keys("abcd1234")
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[2]/button[2]"))
+confirm_channel = URL.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[2]/button[2]")
+confirm_channel.click()
 
 
 
