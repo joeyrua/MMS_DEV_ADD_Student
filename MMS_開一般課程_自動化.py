@@ -133,28 +133,28 @@ post.click()#按下發布
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div/div[2]/div[2]/div/div/input"))
 choose_input_student_name = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[3]/div/div[2]/div[2]/div/div/input")
 choose_input_student_name.send_keys("林新月")
-choose_input_student_name.send_keys(Keys.ENTER)
+choose_input_student_name.send_keys(Keys.ENTER)#搜尋學生姓名
 
 URL.execute_script("window.scrollBy(0,300)")
 
 time.sleep(2)
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr/td[9]/div/div/button"))
 edit = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[5]/table/tbody/tr/td[9]/div/div/button")
-edit.click()
+edit.click()#編輯
 
 URL.switch_to.window(URL.window_handles[2])#切換到另一個分頁
 
 wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[9]/div/div[1]"))
 channel_course = URL.find_element("xpath","/html/body/div/div[2]/main/div[2]/div[9]/div/div[1]")
-channel_course.click()
+channel_course.click()#取消課程
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[1]/div[4]/div/textarea[1]"))
 input_change_reason = URL.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[1]/div[4]/div/textarea[1]")
-input_change_reason.send_keys("abcd1234")
+input_change_reason.send_keys("abcd1234")#輸入異動原因
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[2]/button[2]"))
 confirm_channel = URL.find_element("xpath","/html/body/div[2]/div[3]/div/div/div[2]/button[2]")
-confirm_channel.click()
+confirm_channel.click()#確定取消
 
 
 
