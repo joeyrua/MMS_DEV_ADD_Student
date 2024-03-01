@@ -83,7 +83,7 @@ choose_date.click()
 
 wait.until(lambda drvier:drvier.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[3]/div[3]/div[2]/div/input"))
 start_time = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[3]/div[3]/div[2]/div/input")
-start_time.send_keys("1400")#開始時間
+start_time.send_keys("1800")#開始時間
 
 URL.execute_script("window.scrollBy(0,400)")
 
@@ -117,5 +117,21 @@ wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[3]/m
 channel = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[6]/div/div[2]/button[1]")
 channel.click()
 
+time.sleep(2)
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[5]/table/tbody/tr/td[8]/div/div/button"))
+edit = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[5]/table/tbody/tr/td[8]/div/div/button")
+edit.click()
 
+URL.switch_to.window(URL.window_handles[1])#切換到另一個分頁
 
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[8]/div/div[1]"))
+channel_course = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[8]/div/div[1]")
+channel_course.click()
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[5]/div[3]/div/div/div[1]/div[4]/div/textarea[1]"))
+input_reason = URL.find_element("xpath","/html/body/div[5]/div[3]/div/div/div[1]/div[4]/div/textarea[1]")
+input_reason.send_keys("aaaa")
+
+wait.until(lambda driver:driver.find_element("xpath","/html/body/div[5]/div[3]/div/div/div[2]/button[2]"))
+confirm_channel = URL.find_element("xpath","/html/body/div[5]/div[3]/div/div/div[2]/button[2]")
+confirm_channel.click()
