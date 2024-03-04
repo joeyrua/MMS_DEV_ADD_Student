@@ -122,7 +122,7 @@ wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[3]/m
 edit = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[5]/table/tbody/tr/td[8]/div/div/button")
 edit.click()
 
-URL.switch_to.window(URL.window_handles[1])#切換到另一個分頁
+URL.switch_to.window(URL.window_handles[2])#切換到另一個分頁
 
 wait.until(lambda driver:driver.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[8]/div/div[1]"))
 channel_course = URL.find_element("xpath","/html/body/div[1]/div[3]/main/div[2]/div[8]/div/div[1]")
